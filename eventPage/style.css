@@ -1,0 +1,14 @@
+.time {
+    float: left;
+}
+.clearFloat {
+    clear: both;
+    float: none;
+}
+.jumbotron {
+   background-image: url("../res.jpeg");
+}
+
+h1 {
+    text-align: center;
+}
