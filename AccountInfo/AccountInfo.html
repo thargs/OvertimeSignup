@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Account Info</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="AccountInfo.css" />
+    <link rel="stylesheet" type="text/css" href="reset.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-3">Account Information</h1>
+                <p class="lead">View and Edit Account Information Here</p>
+            </div>
+        </div>
+        <form>
+            <div class="row justify-content-md-center">
+                <div class="form-group col-md-4">
+                    <label for="Username">Username</label>
+                    <input type="Username" class="form-control" id="Username" aria-describedby="Username" placeholder="Username">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="Password">Password</label>
+                    <input type="Password" class="form-control" id="Password" aria-describedby="Password" placeholder="Password">
+                    <small id="Password" class="form-text text-muted">Update the form and click "Submit" to change Password</small>
+                </div>
+            </div>
+            <br>
+            <div class="row justify-content-md-center">
+                <div class="form-group col-md-4">
+                    <label for="First">First Name</label>
+                    <input type="First" class="form-control" id="First" aria-describedby="First" placeholder="First Name">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="Last">Last Name</label>
+                    <input type="Last" class="form-control" id="Last" aria-describedby="Last" placeholder="Last Name">
+                </div>
+            </div>
+            <br>
+            <div class="row justify-content-md-center">
+                <div class="form-group col-md-4">
+                    <label for="Email">Email Address</label>
+                    <input type="Email" class="form-control" id="Email" aria-describedby="Email" placeholder="Email@Address.com">
+                    <small id="Email Address" class="form-text text-muted">Add Email Address for email notifications about new events</small>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="Phone">Phone Number</label>
+                    <input type="Phone" class="form-control" id="Phone" aria-describedby="Phone" placeholder="123-456-7890">
+                    <small id="Phone" class="form-text text-muted">Add Phone Number for text message notifications about new events</small>
+                </div>
+            </div>
+            <br>
+            <div class="row justify-content-md-center">
+                <button type="submit" class="btn btn-lg btn-primary">Submit</button>
+            </div>
+    </div>
+    </form>
+    <script type="text/javascript" src="AccountInfo.js"></script>
+</body>
+
+</html>
