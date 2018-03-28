@@ -6,7 +6,7 @@
     float: none;
 }
 .jumbotron {
-   background-image: url("../res.jpeg");
+   background-image: url("res.jpeg");
 }
 
 h1 {
