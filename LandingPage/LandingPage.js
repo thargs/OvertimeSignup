@@ -26,7 +26,7 @@ $('#midLeft').click(function() {
     return false;
 });
 $('#midRight').click(function() {
-    window.location.href = '../';
+    window.location.href = '../eventPage/eventPage.html';
     return false;
 });
 $('#botLeft').click(function() {
