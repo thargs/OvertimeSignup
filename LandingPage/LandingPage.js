@@ -73,3 +73,4 @@ if ((snapshot.child("privilage").getValue().equals("Basic"||"Coordinator"))){
 } else {
     $('#botRight').hide
 };
+
