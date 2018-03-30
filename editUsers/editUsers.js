@@ -25,9 +25,20 @@ $('#submit-new-user').on('click',function(){
     userPrivilage= $('.custom-select').val()
     console.log(userEmail,userPassword,userPrivilage)
     //firebase authentication
-    var auth = firebase.auth();
-    var promise = auth.createUserWithEmailAndPassword(userEmail,userPassword);
-    promise.catch(e => console.log(e.message))
+   firebase.auth().createUserWithEmailAndPassword(userEmail,userPassword)
+   //documentation on .then or .done
+   //overwrite firebase user keys with authentication user ID
+
+   .catch(function (error){
+       console.log(error.code)
+       console.log(error.message)
+   })
+
+    database.ref('users').push({
+        email: userEmail,
+        password: userPassword,
+        privilage: userPrivilage
+    })
    
    alert('account successfully created')
    $('#user-email').val('')
@@ -36,3 +47,14 @@ $('#submit-new-user').on('click',function(){
  
 
 })
+
+// add users to page when accounts are created
+
+database.ref('users').on('child_added',function(snapshot){
+    userkey = snapshot.key
+    console.log(snapshot.key)
+    
+    $('#user-table').append('<tr><td>'+ snapshot.val().email+'</td>'+'<td>'+ snapshot.val().password + '</td>' + '<td>' + snapshot.val().privilage + '</td> </tr>')  
+
+    
+});
