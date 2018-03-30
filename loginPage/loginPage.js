@@ -26,8 +26,42 @@ $('#user-login').on('click',function(){
     var auth = firebase.auth();
     var promise = auth.signInWithEmailAndPassword(loginEmail,loginPassword);
     promise.catch(e => console.log(e.message))
+
    
-   alert('successfully logged in')
-   
+  
+   firebase.auth().signInWithEmailAndPassword(loginEmail,loginPassword).catch(function(error){
+       console.log(error.code)
+       alert('invalid username or password')
+       console.log(error.message)
+   })
 
 })
+
+ firebase.auth().onAuthStateChanged(function(user){
+     console.log('not logged in')
+       if(user != null){
+        window.location = '/LandingPage/LandingPage.html'
+        console.log('user logged in')
+        
+       }
+   })
+
+   $('#logout').on('click',function(){
+       event.preventDefault();
+       firebase.auth().signOut()
+       .then(function() {
+        window.location = 'loginPage.html'
+         console.log('sign out successful')
+       })
+       .catch(function(error) {
+        console.log(error.message)
+        console.log(error.code)
+       });
+   })
+// test capture uid
+  /* $('#test-button').on('click',function (){
+       var uid = firebase.auth().currentUser.uid
+       event.preventDefault();
+       console.log(uid)
+   }) 
+   */
