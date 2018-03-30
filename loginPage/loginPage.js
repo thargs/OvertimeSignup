@@ -31,7 +31,7 @@ $('#user-login').on('click',function(){
   
    firebase.auth().signInWithEmailAndPassword(loginEmail,loginPassword).catch(function(error){
        console.log(error.code)
-       alert('invalid username or password')
+      
        console.log(error.message)
    })
 
@@ -50,7 +50,7 @@ $('#user-login').on('click',function(){
        event.preventDefault();
        firebase.auth().signOut()
        .then(function() {
-        window.location = 'loginPage.html'
+        window.location = '/index.html'
          console.log('sign out successful')
        })
        .catch(function(error) {
@@ -59,9 +59,10 @@ $('#user-login').on('click',function(){
        });
    })
 // test capture uid
-  /* $('#test-button').on('click',function (){
+ /*  $('#test-button').on('click',function (){
        var uid = firebase.auth().currentUser.uid
        event.preventDefault();
        console.log(uid)
    }) 
    */
+  
