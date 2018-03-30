@@ -62,14 +62,14 @@ if ((snapshot.child("privilage").getValue().equals("Basic"))){
     $('#midRight').show
 };
 
-if ((snapshot.child("privilage").getValue().equals("Basic"||"Coordinator"))){
-    $('#botLeft').show
-} else {
+if ((snapshot.child("privilage").getValue().equals("Basic"||"Admin"))){
     $('#botLeft').hide
+} else {
+    $('#botLeft').show
 };
 
-if ((snapshot.child("privilage").getValue().equals("Basic"||"Coordinator"))){
-    $('#botRight').show
-} else {
+if ((snapshot.child("privilage").getValue().equals("Basic"||"Admin"))){
     $('#botRight').hide
+} else {
+    $('#botRight').show
 };
