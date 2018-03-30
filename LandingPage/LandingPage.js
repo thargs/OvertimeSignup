@@ -58,3 +58,4 @@ if (Basic, Coordinator) {
 } else {
     $('#botRight').hide
 };
+
