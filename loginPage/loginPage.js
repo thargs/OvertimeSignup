@@ -40,7 +40,7 @@ $('#user-login').on('click',function(){
  firebase.auth().onAuthStateChanged(function(user){
      console.log('not logged in')
        if(user != null){
-        window.location = '/LandingPage/LandingPage.html'
+      // window.location = '/LandingPage/LandingPage.html'
         console.log('user logged in')
         
        }

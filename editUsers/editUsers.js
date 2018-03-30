@@ -20,10 +20,11 @@ var userPrivilage;
 
 $('#submit-new-user').on('click',function(){
     event.preventDefault();
+    userName = $('#user-name').val()
     userEmail = $('#user-email').val()
     userPassword = $('#user-password').val()
     userPrivilage= $('.custom-select').val()
-    console.log(userEmail,userPassword,userPrivilage)
+    console.log(userName,userEmail,userPassword,userPrivilage)
     //firebase authentication
    firebase.auth().createUserWithEmailAndPassword(userEmail,userPassword)
    //documentation on .then or .done
@@ -35,6 +36,7 @@ $('#submit-new-user').on('click',function(){
    })
 
     database.ref('users').push({
+        name: userName,
         email: userEmail,
         password: userPassword,
         privilage: userPrivilage
