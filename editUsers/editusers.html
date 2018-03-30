@@ -37,6 +37,9 @@
                 <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                     <form>
                         <div class="form-group">
+                                <label for="exampleInputEmail1">Name</label>
+                                <input type="text" class="form-control" id="user-name" aria-describedby="emailHelp" placeholder="name">
+    
                             <label for="exampleInputEmail1">Email</label>
                             <input type="email" class="form-control" id="user-email" aria-describedby="emailHelp" placeholder="Email">
 
@@ -45,7 +48,7 @@
                             <label for="exampleInputPassword1">Password</label>
                             <input type="password" class="form-control" id="user-password" placeholder="Password">
                         </div>
-                        <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Privilage</label>
+                        <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Privilege</label>
                         <select class="custom-select my-1 mr-sm-2" id="user-privilege">
                             <option selected>Choose Privilege Level</option>
                             <option value="Basic">Basic</option>
@@ -68,6 +71,7 @@
                     <table class="table table-hover">
                         <thead>
                             <tr>
+                                <th>Name</th>
                                 <th>Email</th>
                                 <th>Password</th>
                                 <th>Privilege</th>  
