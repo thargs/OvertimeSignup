@@ -9,8 +9,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="openEventsSignup.css" />
+    
 </head>
 
 <body>
@@ -33,40 +34,18 @@
                 <thead class="thead-light">
                     <tr>
                         <th>Event</th>
-                        <th>Date</th>
+                        <th>Post Time</th>
+                        <th>Event Date</th>
+                        <th>Start Time</th>
+                        <th>End Time</th>
                         <th>Location</th>
-                        <th>Time</th>
+                        <th>Details</th>
                         <th></th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>Men's Basketball vs LSU</td>
-                        <td>04/12/2018</td>
-                        <td>Huntsman Center</td>
-                        <td>4:00pm</td>
-                        <td>
-                            <button type="button" class="btn btn-danger">Sign-up Now</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Gymnastics vs BYU</td>
-                        <td>05/3/2018</td>
-                        <td>Huntsman Center</td>
-                        <td>6:00pm</td>
-                        <td>
-                            <button type="button" class="btn btn-danger">Sign-up Now</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Football vs UNLV</td>
-                        <td>07/13/18</td>
-                        <td>Rice-Eccles Stadium</td>
-                        <td>8:30pm</td>
-                        <td>
-                            <button type="button" class="btn btn-danger">Sign-up Now</button>
-                        </td>
-                    </tr>
+                <tbody id='event-table'>
+
+
                 </tbody>
             </table>
 
@@ -82,6 +61,9 @@
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+        
+    <script src="openEventsSignup.js"></script>
+    
 </body>
 
 </html>

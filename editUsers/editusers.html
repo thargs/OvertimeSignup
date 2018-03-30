@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="editUsers.css" />
 </head>
 
 <body>
@@ -37,22 +37,25 @@
                 <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                     <form>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Username</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Username">
+                                <label for="exampleInputEmail1">Name</label>
+                                <input type="text" class="form-control" id="user-name" aria-describedby="emailHelp" placeholder="name">
+    
+                            <label for="exampleInputEmail1">Email</label>
+                            <input type="email" class="form-control" id="user-email" aria-describedby="emailHelp" placeholder="Email">
 
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                            <input type="password" class="form-control" id="user-password" placeholder="Password">
                         </div>
-                        <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Privilage</label>
-                        <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                            <option selected>Choose Privilage Level</option>
-                            <option value="1">Basic</option>
-                            <option value="2">Admin</option>
-                            <option value="3">Coordinator</option>
+                        <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Privilege</label>
+                        <select class="custom-select my-1 mr-sm-2" id="user-privilege">
+                            <option selected>Choose Privilege Level</option>
+                            <option value="Basic">Basic</option>
+                            <option value="Admin">Admin</option>
+                            <option value="Coordinator">Coordinator</option>
                         </select>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" id='submit-new-user' class="btn btn-primary">Submit</button>
                     </form>
                 </div>
             </div>
@@ -60,7 +63,7 @@
                 <div class="card-header" id="headingTwo">
                     <h5 class="mb-0 text-center">
                         <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            Current User
+                            Current Users
                         </button>
                     </h5>
                 </div>
@@ -68,27 +71,14 @@
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th>Username</th>
+                                <th>Name</th>
+                                <th>Email</th>
                                 <th>Password</th>
-                                <th>Privilage</th>  
+                                <th>Privilege</th>  
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>Matthew</td>
-                                <td>Fre$h22Prince</td>
-                                <td>Basic</td>                               
-                            </tr>
-                            <tr>
-                                <td>Mark</td>
-                                <td>SwaggZilla33</td>
-                                <td>Administrator</td>                                
-                            </tr>
-                            <tr>
-                                <td>Luke</td>
-                                <td>FlimFlam44</td>
-                                <td>Coordinator</td>                             
-                            </tr>
+                        <tbody id = 'user-table'>
+                           
                         </tbody>
                     </table>
                 </div>
@@ -103,6 +93,7 @@
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+    <script src="editUsers.js"></script>
 </body>
 
 </html>
