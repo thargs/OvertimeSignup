@@ -55,12 +55,21 @@ $('#botRight').click(function() {
 //} else {
     //$('#midLeft').hide
 //};
+firebase.auth().onAuthStateChanged(function(user){
+      if(user != null){
+        debugger;
+        firebase.ref("users/" + user.uid).once(function(snapshot) {
+            // if ((snapshot.child("privilage").getValue().equals("Basic"))){
+            //     $('#midRight').hide
+            // } else {
+            //     $('#midRight').show
+            // };
+        });
+          
+            
+      }
+  })
 
-if ((snapshot.child("privilage").getValue().equals("Basic"))){
-    $('#midRight').hide
-} else {
-    $('#midRight').show
-};
 
 if ((snapshot.child("privilage").getValue().equals("Basic"||"Coordinator"))){
     $('#botLeft').show
