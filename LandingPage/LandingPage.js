@@ -10,7 +10,16 @@ var config = {
 firebase.initializeApp(config);
 
 
-
+firebase.auth().onAuthStateChanged(function(user){
+   
+    if(user == null){
+      console.log('not logged in')
+    window.location = '/index.html'  
+    }
+    var CurrentUser=firebase.auth().currentUser.uid
+ console.log(CurrentUser)
+ 
+ })
 
 
 $('#topLeft').click(function () {
