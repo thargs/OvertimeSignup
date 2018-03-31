@@ -66,7 +66,7 @@ $('#botRight').click(function () {
 //} else {
 //$('#midLeft').hide
 //};
-firebase.auth().onAuthStateChanged(function (user) {
+/*firebase.auth().onAuthStateChanged(function (user) {
     if (user != null) {
         debugger;
         firebase.ref("users/" + user.uid).once(function (snapshot) {
@@ -79,7 +79,7 @@ firebase.auth().onAuthStateChanged(function (user) {
 
 
     }
-})
+})*/
 
 
 /*if ((snapshot.child("privilage").getValue().equals("Basic"))) {

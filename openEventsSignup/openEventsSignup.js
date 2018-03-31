@@ -58,7 +58,7 @@ $('#logout').on('click',function(){
     event.preventDefault();
     firebase.auth().signOut()
     .then(function() {
-     window.location = '/index.html'
+     window.location = '../index.html'
       console.log('sign out successful')
     })
     .catch(function(error) {
@@ -75,7 +75,7 @@ $('#logout').on('click',function(){
     
       if(user == null){
         console.log('not logged in')
-      window.location = '/index.html'  
+      window.location = '../index.html'  
       }
      
   })

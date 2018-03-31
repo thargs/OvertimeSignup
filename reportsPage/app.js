@@ -11,7 +11,9 @@ firebase.initializeApp(config);
 var database = firebase.database();
 
 
-database.ref('sign-up log').on("child_added", function (childSnapshot) {
+   
+    database.ref('sign-up log').on("child_added", function (childSnapshot) {
+
         var eventName
         var eventDate
         var ofcWorking
@@ -31,7 +33,7 @@ $('#logout').on('click',function(){
     event.preventDefault();
     firebase.auth().signOut()
     .then(function() {
-     window.location = 'loginPage.html'
+     window.location = '../loginPage.html'
       console.log('sign out successful')
     })
     .catch(function(error) {
@@ -45,7 +47,7 @@ firebase.auth().onAuthStateChanged(function(user){
    
    if(user == null){
      console.log('not logged in')
-   window.location = '/index.html'  
+   window.location = '../index.html'  
    }
    var CurrentUser=firebase.auth().currentUser.uid
 console.log(CurrentUser)
