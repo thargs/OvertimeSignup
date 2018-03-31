@@ -85,4 +85,4 @@ $('#logout').on('click',function(){
      console.log(error.message)
      console.log(error.code)
     });
-})
+});
