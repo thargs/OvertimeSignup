@@ -26,7 +26,7 @@ $('#midLeft').click(function() {
     return false;
 });
 $('#midRight').click(function() {
-    window.location.href = '../';
+    window.location.href = '../eventPage/eventPage.html';
     return false;
 });
 $('#botLeft').click(function() {
@@ -82,3 +82,4 @@ if ((snapshot.child("privilage").getValue().equals("Basic"||"Coordinator"))){
 } else {
     $('#botRight').hide
 };
+

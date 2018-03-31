@@ -60,3 +60,19 @@ $("#add-event").on("click", function (event) {
 
 
 });
+
+
+//logout button to log out of Firebase
+
+$('#logout').on('click',function(){
+    event.preventDefault();
+    firebase.auth().signOut()
+    .then(function() {
+     window.location = 'loginPage.html'
+      console.log('sign out successful')
+    })
+    .catch(function(error) {
+     console.log(error.message)
+     console.log(error.code)
+    });
+})
