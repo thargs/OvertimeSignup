@@ -104,7 +104,7 @@ $('#logout').on('click', function () {
 });
 newFunction();
 function newFunction() {
-    document.ready(function () {
+    $(document).ready(function () {
         ref.once("value")
             .then(function (snapshot) {
                 if (snapshot.child("Basic").exists()) {
