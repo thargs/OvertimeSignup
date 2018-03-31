@@ -22,18 +22,24 @@ $('#user-login').on('click',function(){
     loginPassword = $('#login-password-input').val()
    
     console.log(loginEmail, loginPassword)
-    //firebase authentication
-    var auth = firebase.auth();
-    var promise = auth.signInWithEmailAndPassword(loginEmail,loginPassword);
-    promise.catch(e => console.log(e.message))
-
+    
    
-  
-   firebase.auth().signInWithEmailAndPassword(loginEmail,loginPassword).catch(function(error){
-       console.log(error.code)
-       console.log('invalid username or password')
-       console.log(error.message)
-   })
+    firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
+    .then(function() {
+      // Existing and future Auth states are now persisted in the current
+      // session only. Closing the window would clear any existing state even
+      // if a user forgets to sign out.
+      // ...
+      // New sign-in will be persisted with session persistence.
+      return firebase.auth().signInWithEmailAndPassword(loginEmail, loginPassword);
+    })
+    .catch(function(error) {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      alert("Invalid Username\n" + errorMessage);
+    });
+   
 
 })
 
