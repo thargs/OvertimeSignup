@@ -62,15 +62,27 @@ if ((snapshot.child("privilage").getValue().equals("Basic"))){
     $('#midRight').show
 };
 
-if ((snapshot.child("privilage").getValue().equals("Basic"||"Coordinator"))){
-    $('#botLeft').show
-} else {
+if ((snapshot.child("privilage").getValue().equals("Basic"||"Admin"))){
     $('#botLeft').hide
-};
-
-if ((snapshot.child("privilage").getValue().equals("Basic"||"Coordinator"))){
-    $('#botRight').show
 } else {
-    $('#botRight').hide
+    $('#botLeft').show
 };
 
+if ((snapshot.child("privilage").getValue().equals("Basic"||"Admin"))){
+    $('#botRight').hide
+} else {
+    $('#botRight').show
+};
+
+$('#logout').on('click',function(){
+    event.preventDefault();
+    firebase.auth().signOut()
+    .then(function() {
+     window.location = '/index.html'
+      console.log('sign out successful')
+    })
+    .catch(function(error) {
+     console.log(error.message)
+     console.log(error.code)
+    });
+})

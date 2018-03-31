@@ -8,7 +8,7 @@ var config = {
 };
 firebase.initializeApp(config);
 
-var user = firebase.auth().currentUser;
+/*var user = firebase.auth().currentUser;
 var email, password, firstname, lastname
 
 if (user != null) {
@@ -39,4 +39,8 @@ $('#logout').on('click',function(){
      console.log(error.message)
      console.log(error.code)
     });
+});*/
+
+database.ref('users/' + user.uid).set({
+    phone:""    
 })
