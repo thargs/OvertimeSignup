@@ -91,7 +91,7 @@ $(document).ready(function() {
     event.preventDefault();
     firebase.auth().signOut()
     .then(function() {
-     window.location = '/index.html'
+     window.location = '../index.html'
       console.log('sign out successful')
     })
     .catch(function(error) {
