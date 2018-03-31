@@ -102,6 +102,9 @@ $('#logout').on('click', function () {
             console.log(error.code)
         });
 });
+var user = firebase.auth().currentUser;
+var ref = firebase.database().ref(user);
+
 newFunction();
 function newFunction() {
         ref.once("value")
