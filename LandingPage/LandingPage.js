@@ -10,7 +10,16 @@ var config = {
 firebase.initializeApp(config);
 
 
-
+firebase.auth().onAuthStateChanged(function(user){
+   
+    if(user == null){
+      console.log('not logged in')
+    window.location = '/index.html'  
+    }
+    var CurrentUser=firebase.auth().currentUser.uid
+ console.log(CurrentUser)
+ 
+ })
 
 
 $('#topLeft').click(function () {
@@ -26,7 +35,8 @@ $('#midLeft').click(function () {
     return false;
 });
 
-$('#midRight').click(function() {
+
+$('#midRight').click(function () {
     window.location.href = '../reportsPage/index.html';
     return false;
 });
@@ -56,20 +66,20 @@ $('#botRight').click(function () {
 //} else {
 //$('#midLeft').hide
 //};
-firebase.auth().onAuthStateChanged(function(user){
-      if(user != null){
+firebase.auth().onAuthStateChanged(function (user) {
+    if (user != null) {
         debugger;
-        firebase.ref("users/" + user.uid).once(function(snapshot) {
+        firebase.ref("users/" + user.uid).once(function (snapshot) {
             // if ((snapshot.child("privilage").getValue().equals("Basic"))){
             //     $('#midRight').hide
             // } else {
             //     $('#midRight').show
             // };
         });
-          
-            
-      }
-  })
+
+
+    }
+})
 
 
 /*if ((snapshot.child("privilage").getValue().equals("Basic"))) {
@@ -102,6 +112,8 @@ $('#logout').on('click', function () {
             console.log(error.code)
         });
 });
+
+
 var user = firebase.auth().currentUser;
 var ref = firebase.database().ref(user);
 
