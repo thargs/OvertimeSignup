@@ -6,10 +6,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
@@ -22,7 +23,6 @@
             <button class="btn btn-danger" id="logout">Log Out</button>
             <button class="btn btn-danger"><a href="/LandingPage/LandingPage.html">Main Page</a></button>
         </div>
-
         <form>
             <div class="form-group col">
                 <label for="event">Event</label>
@@ -44,28 +44,31 @@
                 <label for="endTime">End Time</label>
                 <input type="time" class="form-control" id="endTime" placeholder="End Time">
             </div>
+            <div class="form-group col-md-3 time">
+                <label for="ofcNeeded">Officers Needed</label>
+                <input type="number" value="1" class="form-control" id="ofcNeeded" placeholder="Officers Needed">
+            </div>
             <div class="form-group col-md-12 clearFloat">
-                    <label for="eventLocation">Event Location</label>
-                    <input type="" class="form-control" id="eventLocation" placeholder="Event Location">
+                <label for="eventLocation">Event Location</label>
+                <input type="" class="form-control" id="eventLocation" placeholder="Event Location">
             </div>
             <div class="form-group col-md-12 clearFloat">
                 <label for="eventDetails">Event Details</label>
                 <input type="" class="form-control" id="eventDetails" placeholder="Event Details">
             </div>
             <div class="clearFloat col">
-                <button type="add" class="btn btn-primary col-md-3" id="add-event"> Add Event</button>
+                <button type="add" class="btn btn-danger col-md-3" id="add-event">
+                    <a>Add Event</a>
+                </button>
             </div>
         </form>
-
+        <br>
     </div>
+
+
 
     <script src="app.js"></script>
 
-    <!--footer>
-
-        <h1>FOOTER</h1>
-
-      </footer> -->
 
 </body>
 

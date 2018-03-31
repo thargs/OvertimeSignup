@@ -25,8 +25,9 @@ $('#midLeft').click(function () {
     window.location.href = '../AccountInfo/AccountInfo.html';
     return false;
 });
-$('#midRight').click(function () {
-    window.location.href = '../eventPage/eventPage.html';
+
+$('#midRight').click(function() {
+    window.location.href = '../reportsPage/reportsPage.html';
     return false;
 });
 $('#botLeft').click(function () {
@@ -55,6 +56,21 @@ $('#botRight').click(function () {
 //} else {
 //$('#midLeft').hide
 //};
+firebase.auth().onAuthStateChanged(function(user){
+      if(user != null){
+        debugger;
+        firebase.ref("users/" + user.uid).once(function(snapshot) {
+            // if ((snapshot.child("privilage").getValue().equals("Basic"))){
+            //     $('#midRight').hide
+            // } else {
+            //     $('#midRight').show
+            // };
+        });
+          
+            
+      }
+  })
+
 
 /*if ((snapshot.child("privilage").getValue().equals("Basic"))) {
     $('#midRight').hide

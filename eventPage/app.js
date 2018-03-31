@@ -18,6 +18,7 @@ var eventDate;
 var postTime;
 var eventTime;
 var endTime;
+var ofcNeeded
 var eventLocation;
 var eventDetails;
 // Capture Button Click
@@ -29,10 +30,11 @@ $("#add-event").on("click", function (event) {
     postTime = $("#postTime").val().trim();
     eventTime = $("#eventTime").val().trim();
     endTime = $("#endTime").val().trim();
+    ofcNeeded = $("#ofcNeeded").val().trim();
     eventLocation = $("#eventLocation").val().trim();
     eventDetails = $("#eventDetails").val().trim();
 
-    console.log(addEvent, eventDate, postTime, eventTime, endTime, eventLocation, eventDetails);
+    console.log(addEvent, eventDate, postTime, eventTime, endTime, ofcNeeded, eventLocation, eventDetails);
 
     //Setting values in the database
     database.ref('events').push({
@@ -41,6 +43,7 @@ $("#add-event").on("click", function (event) {
         postTime: postTime,
         eventTime: eventTime,
         endTime: endTime,
+        ofcNeeded: ofcNeeded,
         eventLocation: eventLocation,
         eventDetails: eventDetails
     });
@@ -50,6 +53,7 @@ $("#add-event").on("click", function (event) {
         $("#postTime").val("");
         $("#eventTime").val("");
         $("#endTime").val("");
+        $("#ofcNeeded").val("");
         $("#eventLocation").val("");
         $("#eventDetails").val("");
 
