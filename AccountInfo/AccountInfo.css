@@ -1,3 +1,25 @@
-.jumbotron{
+a {
+    color: white;
+ }
+ 
+ a:hover {
+    color: rgb(190, 190, 190);
+ }
+ 
+ button {
+    float: right;
+    margin: 5px;
+ }
+ 
+ .time {
+    float: left;
+ }
+ 
+ .clearFloat {
+    clear: both;
+    float: none;
+ }
+ 
+ h1 {
     text-align: center;
-}
+ }

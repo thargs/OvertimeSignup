@@ -11,9 +11,13 @@ firebase.initializeApp(config);
 var database = firebase.database();
 
 
+<<<<<<< HEAD
 
     
     database.ref('sign-up log').on("child_added", function (childSnapshot) {
+=======
+database.ref('sign-up log').on("child_added", function (childSnapshot) {
+>>>>>>> 0284930153dc926d6f7e00fd1df6f571200ce905
         var eventName
         var eventDate
         var ofcWorking

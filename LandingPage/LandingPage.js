@@ -26,7 +26,7 @@ $('#midLeft').click(function() {
     return false;
 });
 $('#midRight').click(function() {
-    window.location.href = '../eventPage/eventPage.html';
+    window.location.href = '../reportsPage/reportsPage.html';
     return false;
 });
 $('#botLeft').click(function() {
@@ -82,3 +82,16 @@ if ((snapshot.child("privilage").getValue().equals("Basic"||"Admin"))){
 } else {
     $('#botRight').show
 };
+
+$('#logout').on('click',function(){
+    event.preventDefault();
+    firebase.auth().signOut()
+    .then(function() {
+     window.location = '/index.html'
+      console.log('sign out successful')
+    })
+    .catch(function(error) {
+     console.log(error.message)
+     console.log(error.code)
+    });
+});
