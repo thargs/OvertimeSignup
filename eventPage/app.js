@@ -61,7 +61,6 @@ $("#add-event").on("click", function (event) {
 
 });
 
-
 //logout button to log out of Firebase
 
 $('#logout').on('click',function(){
@@ -75,4 +74,4 @@ $('#logout').on('click',function(){
      console.log(error.message)
      console.log(error.code)
     });
-})
+}) 
