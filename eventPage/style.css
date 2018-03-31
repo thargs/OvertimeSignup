@@ -12,3 +12,38 @@
 h1 {
     text-align: center;
 }
+
+.footer{
+    background: rgb(231, 231, 231);
+    position: relative;
+    bottom: 0px;
+    height: auto;
+    border-top: red solid 2px;
+    color: red;
+    text-align: center;
+    padding-top: 20px;
+    margin: auto;
+}
+
+#footerPatch {
+   
+    float: left;
+}
+
+.btn-mine {
+    background: rgb(218, 216, 216);
+    border: gray;
+}
+
+a {
+
+    color: black;
+}
+
+a:hover {
+    color: rgb(250, 109, 109);
+}
+
+button:hover {
+    color: rgb(250, 109, 109);
+}
