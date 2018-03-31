@@ -17,27 +17,34 @@ var database = firebase.database();
 database.ref('events').on('child_added',function(snapshot){
    // console.log('test1')
     //console.log(snapshot.key)
+    eventName = snapshot.val().eventName
     
-    $('#event-table').append('<tr><td>'+ snapshot.val().addEvent +'</td>'+'<td>'+ snapshot.val().postTime + '</td>' + '<td>' + snapshot.val().eventDate + '</td>' +' <td>' + snapshot.val().eventTime + '</td>' + '<td>' + snapshot.val().endTime + '</td>' + '<td>' + snapshot.val().eventLocation + '</td>' + '<td>' + snapshot.val().eventDetails + '</td>' + '<td> <button value='+ snapshot.key +' class="btn btn-danger sign-up"> Sign-up </button> </td></tr>')  
-
+    $('#event-table').append('<tr><td>'+ snapshot.val().addEvent +'</td>'+'<td>'+ snapshot.val().postTime + '</td>' + '<td>' + snapshot.val().eventDate + '</td>' +' <td>' + snapshot.val().eventTime + '</td>' + '<td>' + snapshot.val().endTime + '</td>' + '<td>' + snapshot.val().eventLocation + '</td>' + '<td>' + snapshot.val().eventDetails + '</td>' + '<td> <button id='+ snapshot.val().addEvent +' class="btn btn-danger sign-up"> Sign-up </button> </td></tr>')  
+    $('.btn').attr('value',snapshot.val().eventDate)
     
 });
 
 
 $(document).on('click','.sign-up',function(){
-   
+
     alert('Successfully signed-up!')
     // capturing event id
-    var eventId = this.value
+    var eventId = this.id
+    var eventDate = this.value
+    console.log(eventId)
+    console.log(eventDate)
+   
+    
     // capture uid
-    var uid = firebase.auth().currentUser.uid
-   console.log(uid)
+    var uid = firebase.auth().currentUser.email
+   
     
     
     
     database.ref('sign-up log').push({
         user: uid,
-        event: eventId
+        event: eventId,
+        date: eventDate
     })
 
 
@@ -70,6 +77,7 @@ $('#logout').on('click',function(){
         console.log('not logged in')
       window.location = '/index.html'  
       }
+     
   })
  
 
