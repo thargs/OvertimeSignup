@@ -104,7 +104,6 @@ $('#logout').on('click', function () {
 });
 newFunction();
 function newFunction() {
-    $(document).ready(function () {
         ref.once("value")
             .then(function (snapshot) {
                 if (snapshot.child("Basic").exists()) {
@@ -132,5 +131,6 @@ function newFunction() {
                     $('#botRight').show;
                 }
             });
-    });
-}
+    }
+
+
