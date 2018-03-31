@@ -27,7 +27,7 @@ $('#midLeft').click(function () {
 });
 
 $('#midRight').click(function() {
-    window.location.href = '../reportsPage/reportsPage.html';
+    window.location.href = '../reportsPage/index.html';
     return false;
 });
 $('#botLeft').click(function () {
