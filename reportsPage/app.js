@@ -11,21 +11,17 @@ firebase.initializeApp(config);
 var database = firebase.database();
 
 
-database.ref('events').on("child_added", function (childSnapshot) {
-    var eventName
-    var eventDate
-    var ofcWorking
-    console.log('child', childSnapshot.val());
-    eventName = childSnapshot.val().addEvent;
-    eventDate = childSnapshot.val().eventDate;
-    
-    database.ref('sign-up log').on("child_added", function (childSnapshot) {
+database.ref('sign-up log').on("child_added", function (childSnapshot) {
+        var eventName
+        var eventDate
+        var ofcWorking
         console.log('2ndchild', childSnapshot.val());
         ofcWorking = childSnapshot.val().user;
+        eventName = childSnapshot.val().event;
+        eventDate = childSnapshot.val().eventDate;
     
         $("#eventTable>tbody").append("<tr><td>" + eventName + "</td><td>" + eventDate + "</td><td>" + ofcWorking + "</td></tr>");
     });
-});
 
 
 
