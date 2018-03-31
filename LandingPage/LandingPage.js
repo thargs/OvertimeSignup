@@ -14,7 +14,7 @@ firebase.auth().onAuthStateChanged(function(user){
    
     if(user == null){
       console.log('not logged in')
-    window.location = '/index.html'  
+    window.location = '../index.html'  
     }
     var CurrentUser=firebase.auth().currentUser.uid
  console.log(CurrentUser)
@@ -66,7 +66,7 @@ $('#botRight').click(function () {
 //} else {
 //$('#midLeft').hide
 //};
-firebase.auth().onAuthStateChanged(function (user) {
+/*firebase.auth().onAuthStateChanged(function (user) {
     if (user != null) {
         debugger;
         firebase.ref("users/" + user.uid).once(function (snapshot) {
@@ -79,7 +79,7 @@ firebase.auth().onAuthStateChanged(function (user) {
 
 
     }
-})
+})*/
 
 
 /*if ((snapshot.child("privilage").getValue().equals("Basic"))) {
@@ -104,7 +104,7 @@ $('#logout').on('click', function () {
     event.preventDefault();
     firebase.auth().signOut()
         .then(function () {
-            window.location = '/index.html'
+            window.location = '../index.html'
             console.log('sign out successful')
         })
         .catch(function (error) {
