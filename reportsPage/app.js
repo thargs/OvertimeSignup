@@ -11,9 +11,7 @@ firebase.initializeApp(config);
 var database = firebase.database();
 
 
-
-
-    
+   
     database.ref('sign-up log').on("child_added", function (childSnapshot) {
 
         var eventName

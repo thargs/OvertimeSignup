@@ -31,7 +31,7 @@ $('#user-login').on('click',function(){
   
    firebase.auth().signInWithEmailAndPassword(loginEmail,loginPassword).catch(function(error){
        console.log(error.code)
-      
+       console.log('invalid username or password')
        console.log(error.message)
    })
 
@@ -66,3 +66,16 @@ $('#user-login').on('click',function(){
    }) 
    */
   
+   /// GOES ON EVERY SINGLE PAGE
+   /*
+   firebase.auth().onAuthStateChanged(function(user){
+    
+    if(user == null){
+      console.log('not logged in')
+    window.location = '/index.html'  
+    }
+    var CurrentUser=firebase.auth().currentUser.uid
+console.log(CurrentUser)
+
+})
+*/
