@@ -20,7 +20,7 @@ var database = firebase.database();
         console.log('2ndchild', childSnapshot.val());
         ofcWorking = childSnapshot.val().user;
         eventName = childSnapshot.val().event;
-        eventDate = childSnapshot.val().eventDate;
+        eventDate = childSnapshot.val().date;
     
         $("#eventTable>tbody").append("<tr><td>" + eventName + "</td><td>" + eventDate + "</td><td>" + ofcWorking + "</td></tr>");
     });
