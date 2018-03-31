@@ -102,29 +102,35 @@ $('#logout').on('click', function () {
             console.log(error.code)
         });
 });
-document.ready(function () {
-    ref.once("value")
-        .then(function (snapshot) {
-            if (snapshot.child("Basic").exists()) {
-                $('#midRight').hide
-            } else {
-                $('#midRight').show
-            }
-        });
-    ref.once("value")
-        .then(function (snapshot) {
-            if (snapshot.child("Basic" || "Admin").exists()) {
-                $('#botLeft').hide
-            } else {
-                $('#botLeft').show
-            }
-        });
-    ref.once("value")
-        .then(function (snapshot) {
-            if (snapshot.child("Basic" || "Admin").exists()) {
-                $('#botRight').hide
-            } else {
-                $('#botRight').show
-            }
-        });
+newFunction();
+function newFunction() {
+    document.ready(function () {
+        ref.once("value")
+            .then(function (snapshot) {
+                if (snapshot.child("Basic").exists()) {
+                    $('#midRight').hide;
+                }
+                else {
+                    $('#midRight').show;
+                }
+            });
+        ref.once("value")
+            .then(function (snapshot) {
+                if (snapshot.child("Basic" || "Admin").exists()) {
+                    $('#botLeft').hide;
+                }
+                else {
+                    $('#botLeft').show;
+                }
+            });
+        ref.once("value")
+            .then(function (snapshot) {
+                if (snapshot.child("Basic" || "Admin").exists()) {
+                    $('#botRight').hide;
+                }
+                else {
+                    $('#botRight').show;
+                }
+            });
     });
+}
