@@ -26,6 +26,7 @@ $('#midLeft').click(function () {
     return false;
 });
 
+
 $('#midRight').click(function () {
     window.location.href = '../reportsPage/index.html';
     return false;
