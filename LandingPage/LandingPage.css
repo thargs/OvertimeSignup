@@ -1,4 +1,4 @@
-#topLeft{
+#openEvents{
 float:left;
 width: 48%;
 height: 250px;
@@ -6,7 +6,7 @@ margin-bottom: 20px;
 font-size: 26pt;
 }
 
-#topRight{
+#reports{
 float:right;
 width: 48%;
 height: 250px;
@@ -14,23 +14,7 @@ margin-bottom: 20px;
 font-size: 26pt;
 }
 
-#midLeft{
-float:right;
-width: 48%;
-height: 250px;
-margin-bottom: 20px;
-font-size: 26pt;
-}
-
-#midRight{
-float:right;
-width: 48%;
-height: 250px;
-margin-bottom: 20px;
-font-size: 26pt;
-}
-
-#botLeft{
+#addEvents{
 float:left;
 width: 48%;
 height: 250px;
@@ -39,7 +23,7 @@ font-size: 26pt;
 color: white;
 }
 
-#botRight{
+#addUsers{
 float:right;
 width: 48%;
 height: 250px;

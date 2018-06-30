@@ -10,41 +10,33 @@ var config = {
 firebase.initializeApp(config);
 
 
-firebase.auth().onAuthStateChanged(function(user){
-   
-    if(user == null){
-      console.log('not logged in')
-    window.location = '../index.html'  
+firebase.auth().onAuthStateChanged(function (user) {
+
+    if (user == null) {
+        console.log('not logged in')
+        window.location = '../index.html'
     }
-    var CurrentUser=firebase.auth().currentUser.uid
- console.log(CurrentUser)
- 
- })
+
+    firebase.database().ref('users/' + user.uid).once('value').then(function (snapshot) {
+        newFunction(snapshot.val().privilage);
+    });
+})
 
 
-$('#topLeft').click(function () {
+$('#openEvents').click(function () {
     window.location.href = '../openEventsSignup/openeventsignup.html';
     return false;
 });
-$('#topRight').click(function () {
-    window.location.href = '../';
-    return false;
-});
-$('#midLeft').click(function () {
-    window.location.href = '../AccountInfo/AccountInfo.html';
-    return false;
-});
 
-
-$('#midRight').click(function () {
+$('#reports').click(function () {
     window.location.href = '../reportsPage/index.html';
     return false;
 });
-$('#botLeft').click(function () {
+$('#addEvents').click(function () {
     window.location.href = '../eventPage/eventPage.html';
     return false;
 });
-$('#botRight').click(function () {
+$('#addUsers').click(function () {
     window.location.href = '../editUsers/editusers.html';
     return false;
 });
@@ -114,38 +106,37 @@ $('#logout').on('click', function () {
 });
 
 
-var user = firebase.auth().currentUser;
-var ref = firebase.database().ref(user);
 
-newFunction();
-function newFunction() {
-        ref.once("value")
-            .then(function (snapshot) {
-                if (snapshot.child("Basic").exists()) {
-                    $('#midRight').hide;
-                }
-                else {
-                    $('#midRight').show;
-                }
-            });
-        ref.once("value")
-            .then(function (snapshot) {
-                if (snapshot.child("Basic" || "Admin").exists()) {
-                    $('#botLeft').hide;
-                }
-                else {
-                    $('#botLeft').show;
-                }
-            });
-        ref.once("value")
-            .then(function (snapshot) {
-                if (snapshot.child("Basic" || "Admin").exists()) {
-                    $('#botRight').hide;
-                }
-                else {
-                    $('#botRight').show;
-                }
-            });
+
+function newFunction(privilage) {
+
+
+    if (privilage === "Basic") {
+        $('#openEvents').show();
     }
+    else {
+        $('#reports').hide();
+        $('#addEvents').hide();
+        $('#addUsers').hide();
+        $('#openEvents').hide();
+    }
+    if (privilage === "Admin") {
+        $('#reports').show();
+        $('#openEvents').show();
+    }
+    else {
+        $('#reports').hide();
+        $('#addEvents').hide();
+        $('#addUsers').hide();
+    }
+    if (privilage === "Coordinator") {
+        $('#reports').show();
+        $('#addEvents').show();
+        $('#addUsers').show();
+        $('#openEvents').show();
+    }
+
+
+};
 
 
