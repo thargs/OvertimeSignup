@@ -11,17 +11,21 @@ firebase.initializeApp(config);
 
 
 firebase.auth().onAuthStateChanged(function (user) {
-
+    
     if (user == null) {
         console.log('not logged in')
         window.location = '../index.html'
     }
-
+    
     firebase.database().ref('users/' + user.uid).once('value').then(function (snapshot) {
         newFunction(snapshot.val().privilage);
     });
 })
 
+$('#reports').hide();
+$('#addEvents').hide();
+$('#addUsers').hide();
+$('#openEvents').hide();
 
 $('#openEvents').click(function () {
     window.location.href = '../openEventsSignup/openeventsignup.html';
@@ -41,57 +45,6 @@ $('#addUsers').click(function () {
     return false;
 });
 
-//if (Admin, Coordinator, Basic) {
-//$('#topLeft').show
-//} else {
-//$('#topLeft').hide
-//};
-
-//if (Admin, Coordinator, Basic) {
-//$('#topRight').show
-//} else {
-//$('#topRight').hide
-//};
-
-//if (Admin, Coordinator, Basic) {
-//$('#midLeft').show
-//} else {
-//$('#midLeft').hide
-//};
-/*firebase.auth().onAuthStateChanged(function (user) {
-    if (user != null) {
-        debugger;
-        firebase.ref("users/" + user.uid).once(function (snapshot) {
-            // if ((snapshot.child("privilage").getValue().equals("Basic"))){
-            //     $('#midRight').hide
-            // } else {
-            //     $('#midRight').show
-            // };
-        });
-
-
-    }
-})*/
-
-
-/*if ((snapshot.child("privilage").getValue().equals("Basic"))) {
-    $('#midRight').hide
-} else {
-    $('#midRight').show
-};
-
-if ((snapshot.child("privilage").getValue().equals("Basic" || "Admin"))) {
-    $('#botLeft').hide
-} else {
-    $('#botLeft').show
-};
-
-if ((snapshot.child("privilage").getValue().equals("Basic" || "Admin"))) {
-    $('#botRight').hide
-} else {
-    $('#botRight').show
-};*/
-
 $('#logout').on('click', function () {
     event.preventDefault();
     firebase.auth().signOut()
@@ -106,29 +59,18 @@ $('#logout').on('click', function () {
 });
 
 
-
-
 function newFunction(privilage) {
 
 
     if (privilage === "Basic") {
         $('#openEvents').show();
     }
-    else {
-        $('#reports').hide();
-        $('#addEvents').hide();
-        $('#addUsers').hide();
-        $('#openEvents').hide();
-    }
+
     if (privilage === "Admin") {
         $('#reports').show();
         $('#openEvents').show();
     }
-    else {
-        $('#reports').hide();
-        $('#addEvents').hide();
-        $('#addUsers').hide();
-    }
+
     if (privilage === "Coordinator") {
         $('#reports').show();
         $('#addEvents').show();
