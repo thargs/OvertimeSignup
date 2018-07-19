@@ -27,7 +27,7 @@ database.ref('events').on('child_added',function(snapshot){
 
 $(document).on('click','.sign-up',function(){
 
-    alert('Successfully signed-up!')
+    // alert('Successfully signed-up!')
     // capturing event id
     var eventId = this.id
     var eventDate = this.value
