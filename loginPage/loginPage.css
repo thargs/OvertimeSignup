@@ -22,12 +22,17 @@ a {
  
  h1 {
     text-align: center;
+    color: #ff0000;
     font-size:5rem;
-    font-family: 'Bitter', serif;
-    color: white;
-    text-shadow: 1px 1px #ff0000;
+    font-family: 'Righteous', cursive;
+    text-shadow: 1px 1px white;
+ 
  }
-
+ 
  .jumbotron {
-    background-image: url("../img/res.jpeg");
- }
+     background-image: url("../img/res.jpeg");
+  }
+ 
+  body{
+      background-color: rgb(231, 229, 229);
+  }

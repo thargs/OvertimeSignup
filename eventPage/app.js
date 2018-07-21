@@ -7,8 +7,7 @@ var config = {
     messagingSenderId: "94543825971"
 };
 firebase.initializeApp(config);
-
-
+var functions = firebase.functions();
 
 // Create a variable to reference the database.
 var database = firebase.database();
@@ -46,6 +45,9 @@ $("#add-event").on("click", function (event) {
         ofcNeeded: ofcNeeded,
         eventLocation: eventLocation,
         eventDetails: eventDetails
+    }).then(function(){
+        var emailAlert = firebase.functions().httpsCallable('emailAlert');
+        emailAlert()
     });
 
         $("#addEvent").val("");
