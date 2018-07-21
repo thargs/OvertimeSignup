@@ -1,38 +1,105 @@
-a {
+
+h1 {
+    font-family: 'Righteous';
+    text-align: center;
+    color: white;
+    font-size:5rem;
+    text-shadow: 1px 1px #ff0000;
+ 
+ }
+ a {
     color: white;
 }
 
 a:hover {
-    color: rgb(190, 190, 190);
+    color: white;
+    text-decoration: none;
+
+}
+.sub{
+    background:red;
 }
 
-button {
-    float: right;
-    margin: 5px;
-}
 
-.time {
-    float: left;
-}
+  #openEvents{
+    float: inherit;
+    width: 500px;
+    height: 250px;
+    margin: 20px;
+    font-family: 'Righteous';
+    background-image: url("../img/OpenEvents.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+    
+    #reports{
+    float: inherit;
+    width: 500px;
+    height: 250px;
+    margin: 20px;
+    background-image: url("../img/reports.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+    
+    #addEvents{
+    float: inherit;
+    width: 500px;
+    height: 250px;
+    margin: 20px;
+    color: white;
+    background-image: url("../img/AddEdit.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+    
+    #addUsers{
+    float: inherit;
+    width: 500px;
+    height: 250px;
+    margin: 20px;
+    background-image: url("../img/AddEditUsers.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+    
+    
+    button {
+       float: inherit;
+       margin: 10px;
+    }
+    
+    .clearFloat {
+       clear: both;
+       float: none;
+    }
+    
+    
+    .jumbotron {
+        background-image: url("../img/Campus.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+     }
+    
+     body{
+         background-color: rgb(245, 245, 245);
+     }
+     .time {
+        float: left;
+    }
 
-.clearFloat {
-    clear: both;
-    float: none;
-}
+    .btn-danger {
+        float: right;
+        margin: 5px;
+     }
 
-h1 {
-    text-align: center;
-    color: #ff0000;
-    font-size:5rem;
-    font-family: 'Bitter', serif;
-    text-shadow: 1px 1px white;
- 
- }
- 
- .jumbotron {
-     background-image: url("../img/res.jpeg");
-  }
- 
-  body{
-      background-color: rgb(231, 229, 229);
-  }
+     .btn-block{
+        font-size:1.8rem;
+        height: 6rem
+    }
+
+    label, th {
+        font-family: "Righteous"
+    }
+
+   
